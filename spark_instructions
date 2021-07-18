@@ -1,0 +1,17 @@
+
+Note:find below warning
+
+
+sudo ./bin/kafka-topics.sh --create --topic truck_info --replication-factor 1 --zookeeper localhost:2181 --partitions 1
+
+
+
+
+
+sudo ./bin/kafka-topics.sh --describe  --topic truckinfo --zookeeper localhost:2181
+
+
+
+
+./bin/kafka-console-consumer.sh  --bootstrap-server localhost:9092 --topic truckinfo --from-beginning
+

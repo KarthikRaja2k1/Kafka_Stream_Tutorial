@@ -1,0 +1,36 @@
+
+common step
+go to /usr/local/kafka
+
+step 1
+./bin/zookeeper-server-start.sh config/zookeeper.properties
+
+
+
+step2 (remove kafka-logs from kafka folder)
+
+./bin/kafka-server-start.sh config/server.properties
+
+
+
+step 3
+Note: avoid _ in topic name
+
+./bin/kafka-topics.sh  --create  --topic truckinfo --replication-factor 1 --zookeper localhost:2181 --partitions 1
+
+
+
+step 4
+
+
+./bin/kafka-console-consumer.sh  --broker  -server localhost:9092 --topic truckinfo -- from-beginning
+
+
+./bin/kafka-console-consumer.sh  --bootstrap-server  -server localhost:9092 --topic truckinfo -- from-beginning
+
+  
+  https://github.com/sasikumarvenkat
+
+
+
+
